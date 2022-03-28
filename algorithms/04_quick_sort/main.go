@@ -17,17 +17,17 @@ func quicksort(arr []int) []int {
 		return arr
 	}
 
-	var smallerThanPivot, equalOrGreaterThanPivot []int
+	var smallerOrEqualThanPivot, greaterThanPivot []int
 	pivot := arr[0]
 
 	for i := 1; i < len(arr); i++ {
-		if arr[i] < pivot {
-			smallerThanPivot = append(smallerThanPivot, arr[i])
+		if arr[i] <= pivot {
+			smallerOrEqualThanPivot = append(smallerOrEqualThanPivot, arr[i])
 		} else {
-			equalOrGreaterThanPivot = append(equalOrGreaterThanPivot, arr[i])
+			greaterThanPivot = append(greaterThanPivot, arr[i])
 		}
 	}
 
-	result := append(quicksort(smallerThanPivot), pivot)
-	return append(result, quicksort(equalOrGreaterThanPivot)...)
+	result := append(quicksort(smallerOrEqualThanPivot), pivot)
+	return append(result, quicksort(greaterThanPivot)...)
 }
