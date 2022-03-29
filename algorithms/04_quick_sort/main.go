@@ -18,10 +18,13 @@ func quicksort(arr []int) []int {
 	}
 
 	var smallerOrEqualThanPivot, greaterThanPivot []int
-	pivot := arr[0]
+	pivotIndex := len(arr) / 2
+	pivot := arr[pivotIndex]
 
-	for i := 1; i < len(arr); i++ {
-		if arr[i] <= pivot {
+	for i := 0; i < len(arr); i++ {
+		if i == pivotIndex {
+			continue
+		} else if arr[i] <= pivot {
 			smallerOrEqualThanPivot = append(smallerOrEqualThanPivot, arr[i])
 		} else {
 			greaterThanPivot = append(greaterThanPivot, arr[i])
