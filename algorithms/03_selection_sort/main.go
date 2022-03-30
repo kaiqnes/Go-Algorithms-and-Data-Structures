@@ -34,7 +34,7 @@ func removeIndex(unsorted []int, index int) []int {
 
 func getIndexFromSmallerValue(arr []int) int {
 	var index int
-	smaller := int(^uint(0) >> 1)
+	smaller := utils.MaxInt
 	for i := 0; i < len(arr); i++ {
 		if arr[i] < smaller {
 			smaller = arr[i]

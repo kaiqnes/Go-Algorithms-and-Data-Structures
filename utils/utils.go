@@ -5,6 +5,13 @@ import (
 	"time"
 )
 
+const (
+	MaxUint = ^uint(0)
+	MinUint = 0
+	MaxInt  = int(MaxUint >> 1)
+	MinInt  = -MaxInt - 1
+)
+
 func GetRandomIntSlice(size int) (arr []int) {
 	for i := 0; i < size; i++ {
 		rand.Seed(time.Now().UnixNano())
